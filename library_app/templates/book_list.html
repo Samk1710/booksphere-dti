@@ -1,0 +1,17 @@
+<!-- library_app/templates/book_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Book List</h1>
+    <div class="book-grid">
+        {% for book in books %}
+            <div class="book-card">
+                <img src="{{ book.cover_photo.url }}" alt="{{ book.title }} cover">
+                <h2>{{ book.title }}</h2>
+                <p>{{ book.author }}</p>
+                <p>{{ book.genre }}</p>
+                <a href="{% url 'book_detail' book.pk %}">View Details</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

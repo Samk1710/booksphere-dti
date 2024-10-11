@@ -1,0 +1,10 @@
+<!-- library_app/templates/book_detail.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ book.title }}</h1>
+    <img src="{{ book.cover_photo.url }}" alt="{{ book.title }} cover">
+    <p>Author: {{ book.author }}</p>
+    <p>Genre: {{ book.genre }}</p>
+    <a href="{{ book.pdf_file.url }}" target="_blank">View PDF</a>
+{% endblock %}
